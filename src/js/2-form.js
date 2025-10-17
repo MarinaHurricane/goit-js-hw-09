@@ -16,11 +16,6 @@ function inputFunction(event) {
     localStorage.setItem(localStorageKey, JSON.stringify(formData));
 }
 
-//email.value = localStorage.getItem(localStorageKey);
-// const savedEmail = localStorage.getItem("formData");
-// const parsedEmail = JSON.parse(savedEmail);
-// email.value = formData.email;
-
 const savedFormData = localStorage.getItem(localStorageKey);
 if(savedFormData) {
     formData = JSON.parse(savedFormData);
@@ -28,7 +23,6 @@ if(savedFormData) {
     textarea.value = formData.message ?? "";
 }
 
-//textarea.value = localStorage.getItem(localStorageKey) ?? "";
 
 form.addEventListener("submit", submitFunction);
 
@@ -41,11 +35,6 @@ function submitFunction(event) {
     } else {
         alert("Please fill in both fields!")
     }
-    //const form = event.target;
-    // const data= {};
-    // const email = form.elements.email.value;
-    // const message = form.elements.message.value;
-    // formData.email = email;
-    // formData.message = message;
+
   
 };
