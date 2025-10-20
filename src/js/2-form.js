@@ -59,8 +59,8 @@ if(savedFormData) {
 }
 
 form.addEventListener("input", (event) => { 
-    localStorage.setItem(localStorageKey, JSON.stringify(formData));
-    formData[event.target.name] = event.target.value.trim();  
+    formData[event.target.name] = event.target.value.trim(); 
+    localStorage.setItem(localStorageKey, JSON.stringify(formData)); 
 });
 
 form.addEventListener("submit", submitFunction);
@@ -69,13 +69,13 @@ function submitFunction(event) {
     event.preventDefault();
     if (formData.email && formData.message) {
         console.log(formData);
-    } else {
-        alert("Please fill in both fields!")
-    }
-        localStorage.removeItem(localStorageKey);
+         localStorage.removeItem(localStorageKey);
         formData.email = "";
         formData.message = "";
         form.reset();
+    } else {
+        alert("Please fill in both fields!")
+    }    
 };
 
 
